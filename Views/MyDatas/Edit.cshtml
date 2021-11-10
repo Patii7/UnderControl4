@@ -1,0 +1,173 @@
+﻿@model UnderControl.Models.MyData
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MyData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" type="number" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Temperature" class="control-label"></label>
+                <input asp-for="Temperature" class="form-control" type="number" />
+                <span asp-validation-for="Temperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feeling" class="control-label"></label>
+                <select asp-for="Feeling">
+                    <option value="Dry">
+                        Dry
+                    </option>
+                    <option value="Wet">
+                        Wet
+                    </option>
+                    <option value="Damp">
+                        Damp
+                    </option>
+                </select>
+                <span asp-validation-for="Feeling" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label">
+                    Color of the mucus
+                </label>
+                <select asp-for="Color">
+                    <option value="Cloudy mucus">
+                        Cloudy mucus
+                    </option>
+                    <option value="Transparent mucus">
+                        Transparent mucus
+                    </option>
+                    <option value="White or yellow mucus">
+                        White or yellow mucus
+                    </option>
+                    <option value="No mucus">
+                        No mucus
+                    </option>
+                </select>
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consistency" class="control-label">
+                    Mucus consistency
+                </label>
+                <select asp-for="Consistency">
+                    <option value="Thick and pulling mucus">
+                        Thick and pulling mucus
+                    </option>
+                    <option value="Unstretchable and sticky mucus">
+                        Unstretchable and sticky mucus
+                    </option>
+                    <option value="No mucus">
+                        No mucus
+                    </option>
+                </select>
+                <span asp-validation-for="Consistency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label">
+                    Quantity mucus
+                </label>
+                <select asp-for="Quantity">
+                    <option value="No mucus">
+                        No mucus
+                    </option>
+                    <option value="Little mucus">
+                        Little mucus
+                    </option>
+                    <option value="Lots of mucus">
+                        Lots od mucus
+                    </option>
+                </select>
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cervix" class="control-label"></label>
+                <select asp-for="Cervix">
+                    <option value="Hard and dry">
+                        Hard and Dry
+                    </option>
+                    <option value="Soft and wet">
+                        Soft and Wet
+                    </option>
+                </select>
+                <span asp-validation-for="Cervix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bleeding" class="control-label"></label>
+                <label asp-for="Bleeding" class="control-label"></label>
+                <select asp-for="Bleeding">
+                    <option value="Yes">
+                        Yes
+                    </option>
+                    <option value="No">
+                        No
+                    </option>
+                </select>
+                <span asp-validation-for="Bleeding" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sex" class="control-label"></label>
+                <select asp-for="Sex">
+                    <option value="Yes">
+                        Yes
+                    </option>
+                    <option value="No">
+                        No
+                    </option>
+                </select>
+                <span asp-validation-for="Sex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<button input asp-for="Others" class="form-control"  type="button" id="Others" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Others
+            </button>*@
+                @*<div class="dropdown" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Stomachache</a>
+                <a class="dropdown-item" href="#">Sensitive breasts</a>
+                <a class="dropdown-item" href="#">Nothing</a>
+
+            </div>*@
+                <label asp-for="Others" class="control-label"></label>
+                <select asp-for="Others">
+                    <option value="Stomachache">
+                        Stomachache
+                    </option>
+                    <option value="Sensitive breasts">
+                        Sensitive breasts
+                    </option>
+                    <option value="Nothing">
+                        Nothing
+                    </option>
+                </select>
+                <span asp-validation-for="Others" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
